@@ -66,11 +66,19 @@ module.exports = {
           800: '#1e293b',
           900: '#0f172a',
           950: '#020617',
+        },
+        grayscale: {
+          400: '#ADADAD',
+          900: '#010101',
+        },
+        green: {
+          600: '#BBFF6A',
         }
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
-        display: ['Inter', 'system-ui', 'sans-serif'],
+        display: ['Graphik', 'Inter', 'system-ui', 'sans-serif'],
+        'graphik': ['Graphik', 'Inter', 'system-ui', 'sans-serif'],
         'neue-montreal': ['Neue Montreal', 'Inter', 'system-ui', 'sans-serif'],
       },
       fontSize: {
@@ -87,9 +95,18 @@ module.exports = {
         '7xl': ['4.5rem', { lineHeight: '1' }],
         '8xl': ['6rem', { lineHeight: '1' }],
         '9xl': ['8rem', { lineHeight: '1' }],
+        // Custom sizes for services section
+        'button-label': ['12px', { lineHeight: '16px', letterSpacing: '0.02em' }],
+        'desktop-h1': ['60px', { lineHeight: '68px', letterSpacing: '-0.04em' }],
+        'text-xl-regular': ['20px', { lineHeight: '30px', letterSpacing: '0.02em' }],
+        'desktop-h4': ['30px', { lineHeight: '36px', letterSpacing: '-0.02em' }],
+        'text-lg-regular': ['18px', { lineHeight: '26px', letterSpacing: '0.035em' }],
       },
       spacing: {
+        '10': '2.5rem',
+        '14': '3.5rem',
         '18': '4.5rem',
+        '25': '6.25rem',
         '88': '22rem',
         '128': '32rem',
       },

@@ -52,6 +52,9 @@ function maju_scripts() {
     // Enqueue Google Fonts
     wp_enqueue_style( 'maju-fonts', 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap', array(), '1.0.0' );
     
+    // Enqueue Graphik Font (using Adobe Fonts or similar service)
+    wp_enqueue_style( 'maju-graphik-font', 'https://use.typekit.net/your-kit-id.css', array(), '1.0.0' );
+    
     // Enqueue main stylesheet
     wp_enqueue_style( 'maju-style', get_stylesheet_uri(), array(), '1.0.0' );
     

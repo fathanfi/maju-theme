@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://use.typekit.net/your-kit-id.css');
 
 @tailwind base;
 @tailwind components;
@@ -11,7 +12,7 @@
   }
   
   body {
-    @apply font-sans text-dark-900 bg-white;
+    @apply font-sans text-dark-900 bg-black;
   }
   
   body.menu-open {
@@ -23,6 +24,11 @@
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
     font-weight: 400;
     font-style: normal;
+  }
+  
+  /* Graphik font fallback */
+  .font-graphik {
+    font-family: 'Graphik', 'Inter', system-ui, sans-serif;
   }
   
   /* Focus styles for accessibility */
@@ -222,21 +228,31 @@
   .hero-section {
     @apply relative min-h-screen flex items-center justify-center overflow-hidden;
   }
-  
+
   .hero-background {
     @apply absolute inset-0 w-full h-full object-cover;
   }
-  
+
   .hero-background-image {
     @apply w-full h-full object-cover;
   }
-  
-  .hero-overlay {
-    @apply absolute inset-0 bg-dark-900/40;
+
+  .hero-blurred-overlay {
+    @apply absolute bottom-0 left-0 w-full;
+    height: 40%; /* adjust depending on how tall you want the fade */
+    background: linear-gradient(
+      180deg,
+      rgba(1, 1, 1, 0) 0%,     /* transparent at top */
+      rgba(1, 1, 1, 0.4) 40%,  /* soft fade */
+      rgba(1, 1, 1, 0.6) 60%,  
+      rgba(1, 1, 1, 0.8) 80%,  
+      #010101 100%             /* fully merges into next section */
+    );
+    pointer-events: none;
   }
   
   .hero-content {
-    @apply relative z-10 text-white w-full mt-[30rem] mx-auto px-[56px] flex items-center justify-between;
+    @apply absolute bottom-0 left-0 right-0 z-10 text-white w-full pb-20 mx-auto px-[56px] flex items-center justify-between;
   }
   
   .hero-title {
@@ -265,11 +281,11 @@
   
   /* Homepage section styles */
   .about-section {
-    @apply py-20 bg-white;
+    @apply py-20 bg-grayscale-900;
   }
   
   .about-section .container {
-    @apply max-w-[1328px] mx-auto px-[56px];
+    @apply max-w-[1328px] mx-auto;
   }
   
   .feature-card {
@@ -281,11 +297,37 @@
   }
   
   .services-section {
-    @apply py-20 bg-dark-50;
+    @apply py-20 relative;
+  }
+  
+  .services-gradient-transition {
+    @apply absolute bottom-0 left-0 right-0 h-32 pointer-events-none;
+    background: linear-gradient(
+      180deg,
+      transparent 0%,
+      rgba(1, 1, 1, 0.3) 50%,
+      rgba(1, 1, 1, 0.6) 100%
+    );
   }
   
   .services-section .container {
-    @apply max-w-[1328px] mx-auto px-[56px];
+    @apply max-w-[1440px] mx-0;
+  }
+
+  .services-section .list-items {
+    @apply py-10 px-14 gap-18 transition-all duration-300;
+  }
+  
+  .services-section .list-items:hover {
+    @apply border-green-600;
+  }
+  
+  .services-section .list-items .list{
+    @apply text-grayscale-400;
+  }
+
+  .services-section .list-items:hover .list {
+    @apply text-white;
   }
   
   .service-card {

@@ -23,7 +23,8 @@ get_header(); ?>
                  alt="<?php esc_attr_e( 'Neon-lit urban background', 'maju' ); ?>" 
                  class="hero-background-image">
         </div>
-        <div class="hero-overlay"></div>
+        <!-- Blurred overlay that merges with services section -->
+        <div class="hero-blurred-overlay"></div>
         
         <div class="hero-content">
             <div class="hero-title">
@@ -35,141 +36,104 @@ get_header(); ?>
                 <?php esc_html_e( 'AI powered creative and digital agency', 'maju' ); ?>
             </p>
         </div>
-        
-        <!-- Scroll indicator -->
-        <div class="scroll-indicator">
-            <div class="scroll-arrow" aria-hidden="true">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M7 14L12 9L17 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </div>
-        </div>
     </section>
 
-    <!-- About Section -->
-    <section class="about-section py-20 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="max-w-4xl mx-auto text-center">
-                <h2 class="text-4xl md:text-5xl font-bold text-dark-900 mb-8">
-                    <?php esc_html_e( 'About Maju', 'maju' ); ?>
-                </h2>
-                <p class="text-xl text-dark-600 mb-12 leading-relaxed">
-                    <?php esc_html_e( 'We are a cutting-edge creative and digital agency powered by artificial intelligence. Our mission is to transform ideas into extraordinary digital experiences that captivate, engage, and inspire.', 'maju' ); ?>
-                </p>
-                
-                <div class="grid md:grid-cols-3 gap-8">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M9.75 17L9 20L12 19L15 20L14.25 17M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </div>
-                        <h3 class="text-xl font-semibold text-dark-900 mb-4">
-                            <?php esc_html_e( 'AI-Powered', 'maju' ); ?>
-                        </h3>
-                        <p class="text-dark-600">
-                            <?php esc_html_e( 'Leveraging cutting-edge AI technology to deliver innovative solutions and exceptional results.', 'maju' ); ?>
-                        </p>
-                    </div>
-                    
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </div>
-                        <h3 class="text-xl font-semibold text-dark-900 mb-4">
-                            <?php esc_html_e( 'Creative Excellence', 'maju' ); ?>
-                        </h3>
-                        <p class="text-dark-600">
-                            <?php esc_html_e( 'Combining artistic vision with technical expertise to create stunning digital experiences.', 'maju' ); ?>
-                        </p>
-                    </div>
-                    
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </div>
-                        <h3 class="text-xl font-semibold text-dark-900 mb-4">
-                            <?php esc_html_e( 'Digital Innovation', 'maju' ); ?>
-                        </h3>
-                        <p class="text-dark-600">
-                            <?php esc_html_e( 'Pushing the boundaries of digital technology to create tomorrow\'s solutions today.', 'maju' ); ?>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
+    
     <!-- Services Section -->
-    <section class="services-section py-20 bg-dark-50">
-        <div class="container mx-auto px-4">
-            <div class="max-w-4xl mx-auto text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold text-dark-900 mb-8">
-                    <?php esc_html_e( 'Our Services', 'maju' ); ?>
-                </h2>
-                <p class="text-xl text-dark-600">
-                    <?php esc_html_e( 'Comprehensive digital solutions tailored to your unique needs and goals.', 'maju' ); ?>
-                </p>
-            </div>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
+    <section class="services-section py-20 bg-grayscale-900 relative">
+        <!-- Gradient transition to hero section -->
+        <div class="services-gradient-transition"></div>
+        <div class="container px-[56px]">
+            <div class="max-w-[1328px] mx-auto">
+                <!-- Header -->
+                <div class="mb-16 max-w-[1052px]">
+                    <div class="mb-6">
+                        <span class="text-button-label font-medium font-graphik uppercase text-white tracking-[0.02em]">
+                            / <?php esc_html_e( 'OUR SERVICES', 'maju' ); ?>
+                        </span>
                     </div>
-                    <h3 class="text-xl font-semibold text-dark-900 mb-4">
-                        <?php esc_html_e( 'Web Development', 'maju' ); ?>
-                    </h3>
-                    <p class="text-dark-600 mb-6">
-                        <?php esc_html_e( 'Custom websites and web applications built with modern technologies and best practices.', 'maju' ); ?>
-                    </p>
-                    <a href="#" class="text-neon-green hover:text-neon-green/80 font-medium">
-                        <?php esc_html_e( 'Learn More', 'maju' ); ?> →
-                    </a>
+                    <h2 class="text-desktop-h1 font-normal font-graphik text-white leading-[68px] tracking-[-0.04em]">
+                        <?php esc_html_e( 'We blend creativity, technology, and strategy to deliver impactful digital solutions tailored to your needs', 'maju' ); ?>
+                    </h2>
                 </div>
                 
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M9.75 17L9 20L12 19L15 20L14.25 17M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
+                <!-- Services List -->
+                <div class="space-y-0">
+                    <!-- Service 1 -->
+                    <div class="flex items-center border-t border-gray-600 list-items">
+                        <div class="list w-[200px] flex-shrink-0">
+                            <span class="text-text-xl-regular font-normal font-neue-montreal text-grayscale-400 leading-[30px] tracking-[0.02em]">
+                                (01)
+                            </span>
+                        </div>
+                        <div class="list w-[364px] flex-shrink-0 mr-12">
+                            <h3 class="text-desktop-h4 font-normal font-graphik leading-[36px] tracking-[-0.02em]">
+                                <?php esc_html_e( 'UI/UX Design', 'maju' ); ?>
+                            </h3>
+                        </div>
+                        <div class="list w-[414px] flex-1">
+                            <p class="text-text-lg-regular font-normal font-neue-montreal leading-[26px] tracking-[0.035em]">
+                                <?php esc_html_e( 'Design seamless and intuitive digital experiences with user-focused interfaces that enhance interaction, improve usability, and elevate your brand\'s digital presence', 'maju' ); ?>
+                            </p>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-semibold text-dark-900 mb-4">
-                        <?php esc_html_e( 'AI Solutions', 'maju' ); ?>
-                    </h3>
-                    <p class="text-dark-600 mb-6">
-                        <?php esc_html_e( 'Intelligent automation and AI-powered tools to streamline your business processes.', 'maju' ); ?>
-                    </p>
-                    <a href="#" class="text-neon-green hover:text-neon-green/80 font-medium">
-                        <?php esc_html_e( 'Learn More', 'maju' ); ?> →
-                    </a>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
+                    
+                    <!-- Service 2 -->
+                    <div class="flex items-center border-t border-gray-600 list-items">
+                        <div class="list w-[200px] flex-shrink-0">
+                            <span class="text-text-xl-regular font-normal font-neue-montreal leading-[30px] tracking-[0.02em]">
+                                (02)
+                            </span>
+                        </div>
+                        <div class="list w-[364px] flex-shrink-0 mr-12">
+                            <h3 class="text-desktop-h4 font-normal font-graphik leading-[36px] tracking-[-0.02em]">
+                                <?php esc_html_e( 'Brand Identity', 'maju' ); ?>
+                            </h3>
+                        </div>
+                        <div class="list w-[414px] flex-1">
+                            <p class="text-text-lg-regular font-normal font-neue-montreal leading-[26px] tracking-[0.035em]">
+                                <?php esc_html_e( 'Craft a strong brand identity with our expertise in creating visuals and strategic elements that resonate with your audience and boost your market presence.', 'maju' ); ?>
+                            </p>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-semibold text-dark-900 mb-4">
-                        <?php esc_html_e( 'Brand Design', 'maju' ); ?>
-                    </h3>
-                    <p class="text-dark-600 mb-6">
-                        <?php esc_html_e( 'Creative branding and visual identity design that makes your brand stand out.', 'maju' ); ?>
-                    </p>
-                    <a href="#" class="text-neon-green hover:text-neon-green/80 font-medium">
-                        <?php esc_html_e( 'Learn More', 'maju' ); ?> →
-                    </a>
+                    
+                    <!-- Service 3 -->
+                    <div class="flex items-center border-t border-gray-600 list-items">
+                        <div class="list w-[200px] flex-shrink-0">
+                            <span class="text-text-xl-regular font-normal font-neue-montreal leading-[30px] tracking-[0.02em]">
+                                (03)
+                            </span>
+                        </div>
+                        <div class="list w-[364px] flex-shrink-0 mr-12">
+                            <h3 class="text-desktop-h4 font-normal font-graphik leading-[36px] tracking-[-0.02em]">
+                                <?php esc_html_e( 'Web Development', 'maju' ); ?>
+                            </h3>
+                        </div>
+                        <div class="list w-[414px] flex-1">
+                            <p class="text-text-lg-regular font-normal font-neue-montreal leading-[26px] tracking-[0.035em]">
+                                <?php esc_html_e( 'Develop fast, responsive, and reliable websites with clean structures and optimized features that support your business objectives and create lasting impressions', 'maju' ); ?>
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Service 4 -->
+                    <div class="flex items-center border-t border-gray-600 list-items">
+                        <div class="list w-[200px] flex-shrink-0">
+                            <span class="text-text-xl-regular font-normal font-neue-montreal leading-[30px] tracking-[0.02em]">
+                                (04)
+                            </span>
+                        </div>
+                        <div class="list w-[364px] flex-shrink-0 mr-12">
+                            <h3 class="text-desktop-h4 font-normal font-graphik leading-[36px] tracking-[-0.02em]">
+                                <?php esc_html_e( 'Social Media Design', 'maju' ); ?>
+                            </h3>
+                        </div>
+                        <div class="list w-[414px] flex-1">
+                            <p class="text-text-lg-regular font-normal font-neue-montreal leading-[26px] tracking-[0.035em]">
+                                <?php esc_html_e( 'Create eye-catching social media visuals with consistent branding and engaging layouts that boost audience interest, interaction, and online visibility', 'maju' ); ?>
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

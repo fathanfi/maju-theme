@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "grunt build",
-    "build:local": "node scripts/build-local.js",
+    "build:local": "grunt clean:build && node scripts/build-local.js",
     "build:zip": "grunt build:zip",
     "dev": "grunt dev",
     "clean": "grunt clean:build",
