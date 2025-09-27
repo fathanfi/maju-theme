@@ -113,11 +113,15 @@ function buildAssets() {
   log('Building CSS and JS assets...');
   
   try {
-    // Build Tailwind CSS
-    execSync('npx tailwindcss -i ./assets/css/src/tailwind.css -o ./assets/css/tailwind.css --minify', { stdio: 'inherit' });
+    // Ensure build directories exist (should already exist from copyThemeFiles)
+    fs.mkdirSync('./build/assets/css', { recursive: true });
+    fs.mkdirSync('./build/assets/js', { recursive: true });
+    
+    // Build Tailwind CSS to build folder with .min.css extension
+    execSync('npx tailwindcss -i ./build/assets/css/src/tailwind.css -o ./build/assets/css/tailwind.min.css --minify', { stdio: 'inherit' });
     log('CSS built successfully', 'success');
     
-    // Build JavaScript
+    // Build JavaScript (webpack will use the copied source file)
     execSync('npx webpack --mode=production', { stdio: 'inherit' });
     log('JavaScript built successfully', 'success');
     
@@ -139,7 +143,10 @@ function copyThemeFiles() {
     fs.rmSync(config.buildDir, { recursive: true, force: true });
   }
   
-  // Copy all theme files
+  // Create build directory
+  fs.mkdirSync(config.buildDir, { recursive: true });
+  
+  // Copy all theme files except excluded ones
   if (copyDirectory('.', config.buildDir)) {
     log('Theme files copied successfully', 'success');
     return true;
@@ -211,8 +218,8 @@ function build(options = {}) {
   log('Starting Maju theme build process...');
   
   const steps = [
-    { name: 'Build Assets', fn: buildAssets },
     { name: 'Copy Theme Files', fn: copyThemeFiles },
+    { name: 'Build Assets', fn: buildAssets },
     { name: 'Create Zip', fn: createZip }
   ];
   

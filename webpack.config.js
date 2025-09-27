@@ -1,13 +1,17 @@
 const path = require('path');
+const fs = require('fs');
+
+// Main JavaScript source file path
+const mainJsPath = './assets/js/src/main.js';
 
 module.exports = {
   entry: {
-    main: './assets/js/src/main.js',
+    main: mainJsPath,
   },
   output: {
-    filename: '[name].js',
-    path: path.resolve(__dirname, 'assets/js'),
-    clean: true,
+    filename: '[name].min.js',
+    path: path.resolve(__dirname, 'build/assets/js'),
+    clean: false,
   },
   module: {
     rules: [
@@ -28,8 +32,6 @@ module.exports = {
   },
   devtool: process.env.NODE_ENV === 'development' ? 'source-map' : false,
   optimization: {
-    splitChunks: {
-      chunks: 'all',
-    },
+    splitChunks: false,
   },
 };

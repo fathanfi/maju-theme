@@ -19,28 +19,21 @@ get_header(); ?>
     <!-- Hero Section -->
     <section class="hero-section">
         <div class="hero-background">
-            <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/hero-bg.jpg' ); ?>" 
+            <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/hero-bg.png' ); ?>" 
                  alt="<?php esc_attr_e( 'Neon-lit urban background', 'maju' ); ?>" 
                  class="hero-background-image">
         </div>
         <div class="hero-overlay"></div>
         
         <div class="hero-content">
-            <h1 class="hero-title">
-                <span class="text-gradient">MAJU</span>
-            </h1>
+            <div class="hero-title">
+                <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/logo-text.png' ); ?>" 
+                     alt="<?php esc_attr_e( 'MAJU Logo', 'maju' ); ?>" 
+                     class="hero-logo-image">
+            </div>
             <p class="hero-subtitle">
                 <?php esc_html_e( 'AI powered creative and digital agency', 'maju' ); ?>
             </p>
-            
-            <div class="hero-actions">
-                <button class="btn btn-primary btn-lg" aria-label="<?php esc_attr_e( 'Get Started', 'maju' ); ?>">
-                    <?php esc_html_e( 'Get Started', 'maju' ); ?>
-                </button>
-                <button class="btn btn-outline btn-lg" aria-label="<?php esc_attr_e( 'Learn More', 'maju' ); ?>">
-                    <?php esc_html_e( 'Learn More', 'maju' ); ?>
-                </button>
-            </div>
         </div>
         
         <!-- Scroll indicator -->

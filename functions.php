@@ -49,14 +49,21 @@ add_action( 'after_setup_theme', 'maju_setup' );
  * Enqueue scripts and styles
  */
 function maju_scripts() {
+    // Enqueue Google Fonts
+    wp_enqueue_style( 'maju-fonts', 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap', array(), '1.0.0' );
+    
     // Enqueue main stylesheet
     wp_enqueue_style( 'maju-style', get_stylesheet_uri(), array(), '1.0.0' );
     
-    // Enqueue Tailwind CSS (will be built from source)
-    wp_enqueue_style( 'maju-tailwind', get_template_directory_uri() . '/assets/css/tailwind.css', array(), '1.0.0' );
+    // Enqueue Tailwind CSS (built file)
+    wp_enqueue_style( 'maju-tailwind', get_template_directory_uri() . '/assets/css/tailwind.min.css', array(), '1.0.0' );
     
-    // Enqueue main JavaScript
-    wp_enqueue_script( 'maju-script', get_template_directory_uri() . '/assets/js/main.js', array(), '1.0.0', true );
+    // Enqueue Alpine.js from CDN
+    wp_enqueue_script( 'alpinejs', 'https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js', array(), '3.15.0', true );
+    wp_script_add_data( 'alpinejs', 'defer', true );
+    
+    // Enqueue main JavaScript (built file)
+    wp_enqueue_script( 'maju-script', get_template_directory_uri() . '/assets/js/main.min.js', array('alpinejs'), '1.0.0', true );
     
     // Localize script for AJAX
     wp_localize_script( 'maju-script', 'maju_ajax', array(
@@ -203,3 +210,6 @@ function maju_fallback_menu() {
     echo '<li><a href="' . esc_url( home_url( '/contact' ) ) . '">' . esc_html__( 'Contact', 'maju' ) . '</a></li>';
     echo '</ul>';
 }
+
+// Hide WordPress admin bar for all users when logged in
+add_filter('show_admin_bar', '__return_false');
