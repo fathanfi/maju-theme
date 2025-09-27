@@ -27,7 +27,12 @@ function maju_setup() {
         'style',
         'script',
     ) );
-    add_theme_support( 'custom-logo' );
+    add_theme_support( 'custom-logo', array(
+        'height'      => 100,
+        'width'       => 400,
+        'flex-height' => true,
+        'flex-width'  => true,
+    ) );
     add_theme_support( 'responsive-embeds' );
     add_theme_support( 'wp-block-styles' );
     add_theme_support( 'align-wide' );
@@ -44,6 +49,74 @@ function maju_setup() {
     }
 }
 add_action( 'after_setup_theme', 'maju_setup' );
+
+/**
+ * Customizer settings
+ */
+function maju_customize_register( $wp_customize ) {
+    // Header Logo Section
+    $wp_customize->add_section( 'maju_logos', array(
+        'title'    => __( 'Theme Logos', 'maju' ),
+        'priority' => 30,
+    ) );
+
+    // White Logo (for header)
+    $wp_customize->add_setting( 'maju_white_logo', array(
+        'default'           => '',
+        'sanitize_callback' => 'absint',
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'maju_white_logo', array(
+        'label'       => __( 'White Logo (Header)', 'maju' ),
+        'description' => __( 'Upload a white logo for use in the header on dark backgrounds.', 'maju' ),
+        'section'     => 'maju_logos',
+        'mime_type'   => 'image',
+    ) ) );
+
+    // Dark Logo (for footer)
+    $wp_customize->add_setting( 'maju_dark_logo', array(
+        'default'           => '',
+        'sanitize_callback' => 'absint',
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'maju_dark_logo', array(
+        'label'       => __( 'Dark Logo (Footer)', 'maju' ),
+        'description' => __( 'Upload a dark logo for use in the footer on light backgrounds.', 'maju' ),
+        'section'     => 'maju_logos',
+        'mime_type'   => 'image',
+    ) ) );
+}
+add_action( 'customize_register', 'maju_customize_register' );
+
+/**
+ * Get white logo for header
+ */
+function maju_get_white_logo() {
+    $white_logo_id = get_theme_mod( 'maju_white_logo' );
+    if ( $white_logo_id ) {
+        $logo = wp_get_attachment_image_src( $white_logo_id, 'full' );
+        return array(
+            'url' => $logo[0],
+            'alt' => get_bloginfo( 'name' ) . ' - ' . __( 'White Logo', 'maju' )
+        );
+    }
+    return false;
+}
+
+/**
+ * Get dark logo for footer
+ */
+function maju_get_dark_logo() {
+    $dark_logo_id = get_theme_mod( 'maju_dark_logo' );
+    if ( $dark_logo_id ) {
+        $logo = wp_get_attachment_image_src( $dark_logo_id, 'full' );
+        return array(
+            'url' => $logo[0],
+            'alt' => get_bloginfo( 'name' ) . ' - ' . __( 'Dark Logo', 'maju' )
+        );
+    }
+    return false;
+}
 
 /**
  * Enqueue scripts and styles

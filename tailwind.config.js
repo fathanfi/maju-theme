@@ -54,6 +54,9 @@ module.exports = {
           yellow: '#ffff00',
           purple: '#8000ff',
         },
+        lime: {
+          green: '#9FE800',
+        },
         dark: {
           50: '#f8fafc',
           100: '#f1f5f9',
@@ -101,6 +104,10 @@ module.exports = {
         'text-xl-regular': ['20px', { lineHeight: '30px', letterSpacing: '0.02em' }],
         'desktop-h4': ['30px', { lineHeight: '36px', letterSpacing: '-0.02em' }],
         'text-lg-regular': ['18px', { lineHeight: '26px', letterSpacing: '0.035em' }],
+        // Custom sizes for footer section
+        'footer-headline': ['154px', { lineHeight: '144px', letterSpacing: '-0.04em' }],
+        'footer-button': ['16px', { lineHeight: '24px', letterSpacing: '0.02em' }],
+        'footer-text': ['20px', { lineHeight: '30px', letterSpacing: '0.02em' }],
       },
       spacing: {
         '10': '2.5rem',
@@ -144,6 +151,18 @@ module.exports = {
         'neon-pink': '0 0 20px rgba(255, 0, 128, 0.5)',
         'neon-blue': '0 0 20px rgba(0, 128, 255, 0.5)',
         'glow': '0 0 30px rgba(0, 255, 136, 0.3)',
+      },
+      container: {
+        center: true,
+        padding: '1rem',
+        screens: {
+          DEFAULT: '100%',
+          sm: '640px',
+          md: '768px',
+          lg: '1024px',
+          xl: '1280px',
+          '2xl': '1440px',
+        },
       },
     },
   },

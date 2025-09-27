@@ -33,10 +33,15 @@ if ( ! defined( 'ABSPATH' ) ) {
         <div class="header-container">
             <div class="site-branding">
                 <?php
-                if ( has_custom_logo() ) {
+                $white_logo = maju_get_white_logo();
+                if ( $white_logo ) {
                     ?>
                     <div class="custom-logo-wrapper">
-                        <?php the_custom_logo(); ?>
+                        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+                            <img src="<?php echo esc_url( $white_logo['url'] ); ?>" 
+                                 alt="<?php echo esc_attr( $white_logo['alt'] ); ?>" 
+                                 class="custom-logo">
+                        </a>
                     </div>
                     <?php
                 } else {

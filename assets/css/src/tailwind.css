@@ -280,13 +280,6 @@
   }
   
   /* Homepage section styles */
-  .about-section {
-    @apply py-20 bg-grayscale-900;
-  }
-  
-  .about-section .container {
-    @apply max-w-[1328px] mx-auto;
-  }
   
   .feature-card {
     @apply text-center p-6;
@@ -338,12 +331,9 @@
     @apply w-12 h-12 text-neon-green mb-6;
   }
   
-  .cta-section {
-    @apply py-20 bg-gradient-neon;
-  }
-  
-  .cta-section .container {
-    @apply max-w-[1328px] mx-auto px-[56px];
+  /* Footer section styles */
+  .footer-section {
+    @apply bg-lime-green py-20 text-black;
   }
   
   /* Footer styles */

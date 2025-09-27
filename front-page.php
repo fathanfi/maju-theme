@@ -139,28 +139,6 @@ get_header(); ?>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section py-20 bg-gradient-neon">
-        <div class="container mx-auto px-4">
-            <div class="max-w-4xl mx-auto text-center">
-                <h2 class="text-4xl md:text-5xl font-bold text-white mb-8">
-                    <?php esc_html_e( 'Ready to Transform Your Digital Presence?', 'maju' ); ?>
-                </h2>
-                <p class="text-xl text-white/90 mb-12">
-                    <?php esc_html_e( 'Let\'s work together to create something extraordinary. Get in touch with our team today.', 'maju' ); ?>
-                </p>
-                
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <button class="btn btn-primary btn-lg bg-white text-dark-900 hover:bg-white/90">
-                        <?php esc_html_e( 'Start Your Project', 'maju' ); ?>
-                    </button>
-                    <button class="btn btn-outline btn-lg border-white text-white hover:bg-white hover:text-dark-900">
-                        <?php esc_html_e( 'Schedule a Call', 'maju' ); ?>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
 </main>
 
 <?php get_footer(); ?>

@@ -340,5 +340,40 @@ window.addEventListener('unhandledrejection', function(e) {
     console.error('Unhandled promise rejection:', e.reason);
 });
 
+// Go to Top Button Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    debugLog('Initializing go to top button');
+    
+    const goToTopBtn = document.getElementById('go-to-top');
+    
+    if (goToTopBtn) {
+        debugLog('Go to top button found');
+        
+        goToTopBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            debugLog('Go to top button clicked');
+            
+            // Smooth scroll to top
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Show/hide button based on scroll position
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                goToTopBtn.style.opacity = '1';
+                goToTopBtn.style.visibility = 'visible';
+            } else {
+                goToTopBtn.style.opacity = '0.7';
+                goToTopBtn.style.visibility = 'visible';
+            }
+        });
+    } else {
+        debugLog('Go to top button not found');
+    }
+});
+
 // Theme initialization complete
 debugLog('MAJU Theme JavaScript loaded successfully');
