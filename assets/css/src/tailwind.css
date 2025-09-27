@@ -241,7 +241,8 @@
   }
   
   .form-textarea {
-    @apply w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-neon-green focus:border-transparent transition-all duration-300 resize-vertical;
+    @apply w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-neon-green focus:border-transparent transition-all duration-300;
+    resize: vertical;
   }
   
   .form-select {
@@ -258,19 +259,19 @@
   }
   
   .shadow-neon {
-    @apply shadow-neon;
+    box-shadow: 0 0 20px rgba(0, 255, 136, 0.5);
   }
   
   .shadow-neon-pink {
-    @apply shadow-neon-pink;
+    box-shadow: 0 0 20px rgba(255, 0, 128, 0.5);
   }
   
   .shadow-neon-blue {
-    @apply shadow-neon-blue;
+    box-shadow: 0 0 20px rgba(0, 128, 255, 0.5);
   }
   
   .shadow-glow {
-    @apply shadow-glow;
+    box-shadow: 0 0 30px rgba(0, 255, 136, 0.3);
   }
 }
 

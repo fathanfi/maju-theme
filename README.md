@@ -31,6 +31,7 @@ npm run build
 - Node.js (v16 or higher)
 - npm or yarn
 - WordPress development environment
+- Local by Flywheel (for local development)
 
 ### Setup
 
@@ -54,9 +55,46 @@ This will:
 
 ### Build for Production
 
+#### Build Theme and Create Zip
+
 ```bash
+# Using Node.js script
 npm run build
+
+# Using shell script
+npm run build:sh
 ```
+
+#### Build and Copy to Local by Flywheel
+
+```bash
+# Using Node.js script
+npm run build:local
+
+# Using shell script
+npm run build:local:sh
+```
+
+#### Install to Local by Flywheel
+
+```bash
+npm run install:local
+```
+
+### Build Process
+
+The build process:
+
+1. **Builds Assets**: Compiles Tailwind CSS and JavaScript
+2. **Copies Theme Files**: Creates clean theme in `build/` directory
+3. **Creates Zip**: Generates `maju.zip` for WordPress upload
+4. **Copies to Local**: Optionally copies to Local by Flywheel
+
+### Build Outputs
+
+- `build/` - Clean theme directory for development
+- `maju.zip` - WordPress theme zip file for upload
+- Local by Flywheel installation (if using `--local` flag)
 
 ### Code Quality
 

@@ -4,7 +4,10 @@
   "description": "A modern, responsive WordPress theme for creative and digital agencies with AI-powered features",
   "main": "index.js",
   "scripts": {
-    "build": "npm run build:css && npm run build:js",
+    "build": "node scripts/build.js",
+    "build:local": "node scripts/build.js --local",
+    "build:sh": "./scripts/build.sh",
+    "build:local:sh": "./scripts/build.sh --local",
     "build:css": "tailwindcss -i ./assets/css/src/tailwind.css -o ./assets/css/tailwind.css --watch",
     "build:js": "webpack --mode=production",
     "dev": "npm run dev:css & npm run dev:js",
@@ -13,6 +16,8 @@
     "lint:css": "stylelint 'assets/css/**/*.css'",
     "lint:js": "eslint assets/js/src/**/*.js",
     "format": "prettier --write 'assets/**/*.{css,js}'",
+    "clean": "rm -rf build && rm -f maju.zip",
+    "install:local": "./scripts/install.sh",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -26,9 +31,12 @@
   "author": "Maju Team",
   "license": "GPL-2.0-or-later",
   "devDependencies": {
+    "@babel/core": "^7.28.4",
+    "@babel/preset-env": "^7.28.3",
     "@tailwindcss/forms": "^0.5.7",
     "@tailwindcss/typography": "^0.5.10",
     "autoprefixer": "^10.4.16",
+    "babel-loader": "^10.0.0",
     "cssnano": "^6.0.1",
     "eslint": "^8.55.0",
     "postcss": "^8.4.32",

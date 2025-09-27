@@ -9,6 +9,10 @@ assets/css/tailwind.css
 assets/js/main.js
 assets/js/main.js.map
 
+# Build directory and zip files
+build/
+maju.zip
+
 # WordPress
 wp-config.php
 wp-content/uploads/
