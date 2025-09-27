@@ -193,6 +193,51 @@
     @apply py-20 bg-gradient-neon;
   }
   
+  /* Footer styles */
+  .site-footer {
+    @apply bg-neon-green text-dark-900 py-8;
+  }
+  
+  .footer-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .footer-content {
+    @apply flex flex-col md:flex-row items-center justify-between gap-6;
+  }
+  
+  .footer-left {
+    @apply flex items-center gap-4;
+  }
+  
+  .footer-logo-link {
+    @apply text-2xl font-bold text-dark-900 hover:text-dark-700 transition-colors duration-300;
+  }
+  
+  .footer-tagline {
+    @apply text-sm text-dark-900 font-medium;
+  }
+  
+  .footer-center {
+    @apply flex items-center;
+  }
+  
+  .footer-menu {
+    @apply flex flex-col md:flex-row items-center gap-4 md:gap-8;
+  }
+  
+  .footer-link {
+    @apply text-sm text-dark-900 hover:text-dark-700 transition-colors duration-300 font-medium;
+  }
+  
+  .footer-right {
+    @apply flex items-center;
+  }
+  
+  .footer-copyright {
+    @apply text-sm text-dark-900 font-medium;
+  }
+  
   /* Button styles */
   .btn {
     @apply inline-flex items-center justify-center px-6 py-3 rounded font-semibold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2;
