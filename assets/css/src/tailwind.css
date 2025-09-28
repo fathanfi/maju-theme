@@ -331,6 +331,107 @@
     @apply w-12 h-12 text-neon-green mb-6;
   }
   
+  /* Portfolio section styles */
+  .portfolio-section {
+    @apply py-20 bg-white relative overflow-hidden;
+  }
+  
+  .portfolio-content {
+    @apply flex flex-col justify-center;
+  }
+  
+  .portfolio-headline {
+    @apply max-w-[964px];
+  }
+  
+  .portfolio-image-wrapper {
+    @apply flex justify-end items-center;
+  }
+  
+  .portfolio-image {
+    @apply relative;
+  }
+  
+  /* Portfolio detail section styles */
+  .portfolio-detail-section {
+    @apply relative overflow-hidden min-h-screen;
+  }
+  
+  .portfolio-detail-bg {
+    @apply absolute inset-0;
+  }
+  
+  .portfolio-detail-overlay {
+    @apply relative z-10 min-h-screen flex items-center;
+  }
+  
+  .portfolio-detail-content {
+    @apply flex flex-col justify-center;
+  }
+  
+  .portfolio-detail-button {
+    @apply bg-white text-grayscale-900 px-6 py-3 rounded-full hover:bg-grayscale-50 transition-colors duration-300;
+  }
+  
+  .portfolio-detail-images {
+    @apply relative;
+  }
+  
+  .portfolio-detail-pop-image {
+    @apply relative;
+  }
+  
+  /* About section styles */
+  .about-section {
+    @apply py-20 bg-grayscale-50;
+  }
+  
+  .about-left-column {
+    @apply flex flex-col justify-start;
+  }
+  
+  .about-right-column {
+    @apply flex flex-col justify-start;
+  }
+  
+  .about-button-wrapper {
+    @apply flex justify-start;
+  }
+  
+  .about-button {
+    @apply bg-grayscale-900 text-white px-8 py-4 rounded-full hover:bg-grayscale-900 transition-colors duration-300 flex items-center gap-3;
+  }
+  
+  /* Video section styles */
+  .video-section {
+    @apply relative overflow-hidden;
+  }
+  
+  .video-container {
+    @apply relative w-full;
+  }
+  
+  .video-player {
+    @apply w-full h-[900px] object-cover;
+  }
+  
+  .video-overlay {
+    @apply absolute inset-0 bg-black bg-opacity-20 pointer-events-none;
+  }
+  
+  /* Responsive video adjustments */
+  @media (max-width: 768px) {
+    .video-player {
+      @apply h-[500px];
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .video-player {
+      @apply h-[400px];
+    }
+  }
+  
   /* Footer section styles */
   .footer-section {
     @apply bg-lime-green py-20 text-black;

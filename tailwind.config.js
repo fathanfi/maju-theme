@@ -71,7 +71,10 @@ module.exports = {
           950: '#020617',
         },
         grayscale: {
+          50: '#F6F6F6',
           400: '#ADADAD',
+          500: '#8A8A8A',
+          600: '#565656',
           900: '#010101',
         },
         green: {
@@ -108,6 +111,20 @@ module.exports = {
         'footer-headline': ['154px', { lineHeight: '144px', letterSpacing: '-0.04em' }],
         'footer-button': ['16px', { lineHeight: '24px', letterSpacing: '0.02em' }],
         'footer-text': ['20px', { lineHeight: '30px', letterSpacing: '0.02em' }],
+        // Custom sizes for portfolio section
+        'portfolio-label': ['12px', { lineHeight: '16px', letterSpacing: '0.02em' }],
+        'portfolio-headline': ['60px', { lineHeight: '68px', letterSpacing: '-0.04em' }],
+        // Custom sizes for portfolio detail section
+        'portfolio-detail-tag': ['18px', { lineHeight: '26px', letterSpacing: '0.035em' }],
+        'portfolio-detail-client': ['24px', { lineHeight: '32px', letterSpacing: '0.02em' }],
+        'portfolio-detail-title': ['60px', { lineHeight: '68px', letterSpacing: '-0.04em' }],
+        'portfolio-detail-button': ['12px', { lineHeight: '18px', letterSpacing: '0.035em' }],
+        'portfolio-detail-counter': ['18px', { lineHeight: '26px', letterSpacing: '0.035em' }],
+        // Custom sizes for about section
+        'about-label': ['12px', { lineHeight: '16px', letterSpacing: '0.02em' }],
+        'about-title': ['60px', { lineHeight: '68px', letterSpacing: '-0.04em' }],
+        'about-text': ['24px', { lineHeight: '32px', letterSpacing: '0.02em' }],
+        'about-button': ['16px', { lineHeight: '24px', letterSpacing: '0.02em' }],
       },
       spacing: {
         '10': '2.5rem',

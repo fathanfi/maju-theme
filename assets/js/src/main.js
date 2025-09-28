@@ -375,5 +375,74 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+// Video Section Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const videoPlayer = document.querySelector('.video-player');
+    
+    if (videoPlayer) {
+        debugLog('Video player found, initializing...');
+        
+        // Ensure video autoplay works on mobile devices
+        videoPlayer.addEventListener('loadedmetadata', function() {
+            debugLog('Video metadata loaded');
+            // Try to play the video
+            const playPromise = videoPlayer.play();
+            
+            if (playPromise !== undefined) {
+                playPromise.then(() => {
+                    debugLog('Video autoplay started successfully');
+                }).catch(error => {
+                    debugLog('Video autoplay failed:', error);
+                    // Fallback: show a play button or handle the error
+                    console.warn('Autoplay was prevented. User interaction required.');
+                });
+            }
+        });
+        
+        // Handle video loading errors
+        videoPlayer.addEventListener('error', function(e) {
+            debugLog('Video loading error:', e);
+            console.error('Video failed to load');
+        });
+        
+        // Ensure video plays when it becomes visible (for better performance)
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    debugLog('Video is visible, ensuring playback');
+                    if (videoPlayer.paused) {
+                        videoPlayer.play().catch(e => {
+                            debugLog('Video play failed:', e);
+                        });
+                    }
+                } else {
+                    debugLog('Video is not visible, pausing to save resources');
+                    if (!videoPlayer.paused) {
+                        videoPlayer.pause();
+                    }
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        observer.observe(videoPlayer);
+        
+        // Handle page visibility changes
+        document.addEventListener('visibilitychange', function() {
+            if (document.hidden) {
+                debugLog('Page hidden, pausing video');
+                videoPlayer.pause();
+            } else {
+                debugLog('Page visible, resuming video');
+                videoPlayer.play().catch(e => {
+                    debugLog('Video resume failed:', e);
+                });
+            }
+        });
+        
+    } else {
+        debugLog('Video player not found');
+    }
+});
+
 // Theme initialization complete
 debugLog('MAJU Theme JavaScript loaded successfully');
