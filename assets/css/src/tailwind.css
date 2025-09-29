@@ -110,6 +110,50 @@
     @apply translate-x-0;
   }
   
+  /* Mobile Navigation */
+  .mobile-navigation {
+    @apply fixed inset-0 bg-black z-50 transform translate-x-full transition-transform duration-500 ease-in-out;
+  }
+  
+  .mobile-navigation.mobile-menu-open {
+    @apply translate-x-0;
+  }
+  
+  .mobile-nav-content {
+    @apply h-full flex flex-col justify-center items-center px-8;
+  }
+  
+  .mobile-nav-title {
+    @apply text-gray-300 text-xs font-medium tracking-wider uppercase mb-12;
+    font-family: 'Graphik', 'Inter', system-ui, sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 2%;
+  }
+  
+  .mobile-nav-links {
+    @apply flex flex-col space-y-8 w-full max-w-sm;
+  }
+  
+  .mobile-menu-links {
+    @apply flex flex-col space-y-8;
+  }
+  
+  .mobile-menu-links a {
+    @apply text-white hover:text-neon-green transition-colors duration-300 flex items-center justify-between;
+    font-family: 'Graphik', 'Inter', system-ui, sans-serif;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 46px;
+    letter-spacing: -2%;
+  }
+  
+  .mobile-menu-links a::after {
+    content: '→';
+    @apply text-gray-300 text-2xl;
+  }
+  
   .nav-menu {
     @apply h-full flex max-w-full lg:max-w-[1440px] mx-auto px-[56px] mt-[170px];
   }
@@ -320,6 +364,15 @@
   }
   
   .get-in-touch-btn:hover {
+    box-shadow: 0 0 20px rgba(0, 255, 136, 0.5);
+  }
+
+  .read-more-btn {
+    @apply bg-grayscale-900 text-white !ml-0 px-8 py-3 rounded-full font-medium text-sm leading-5 tracking-wide uppercase hover:bg-neon-green/90 transition-all duration-300 shadow-lg;
+    font-family: 'Graphik', 'Inter', system-ui, sans-serif;
+  }
+  
+  .read-more-btn:hover {
     box-shadow: 0 0 20px rgba(0, 255, 136, 0.5);
   }
   

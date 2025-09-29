@@ -277,30 +277,39 @@ get_header(); ?>
                     </div>
                     
                     <!-- Part 3 & 4: Two Column Content -->
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-12">
+                    <div class="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-16 mb-12">
+
                         <!-- Left Column -->
                         <div class="about-left-column">
-                            <p class="text-about-text-mobile lg:text-about-text font-normal font-neue-montreal text-grayscale-600 leading-[24px] lg:leading-[32px] tracking-[0.02em] w-[198px] lg:w-full">
+                            <p class="text-about-text-mobile lg:text-about-text font-normal font-neue-montreal text-grayscale-600 leading-[24px] lg:leading-[32px] tracking-[0.02em] w-[198px] lg:w-[274px]">
                                 <?php esc_html_e( 'Creating in Indonesia, delivering globally.', 'maju' ); ?>
                             </p>
                         </div>
                         
                         <!-- Right Column -->
                         <div class="about-right-column">
-                            <p class="text-about-text-mobile lg:text-about-text font-normal font-neue-montreal text-grayscale-600 leading-[24px] lg:leading-[32px] tracking-[0.02em] w-[343px] lg:w-full">
+                            <p class="text-about-text-mobile lg:text-about-text font-normal font-neue-montreal text-grayscale-600 leading-[24px] lg:leading-[32px] tracking-[0.02em] w-[343px] lg:w-[624px]">
                                 <?php esc_html_e( 'Innovation is at the heart of everything we do. We are constantly pushing the limits of technology and creativity to offer tailor-made solutions. Whether through design, storytelling or strategy, we place the human at the center of each project.', 'maju' ); ?>
                             </p>
+
+                            <!-- Part 5: Button -->
+                            <div class="about-button-wrapper hidden lg:inline-flex mt-16">
+                                <!-- Go to Top Button -->
+                                <button class="arrow-btn bg-grayscale-900 text-white p-3" aria-label="Arrow Button">
+                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1 11L11 1M11 1L3.5 1M11 1L11 8.5" 
+                                            stroke="currentColor" 
+                                            stroke-width="1.5" 
+                                            stroke-linecap="round" 
+                                            stroke-linejoin="round"/>
+                                    </svg>
+                                </button>
+                                
+                                <button class="read-more-btn" aria-label="<?php esc_attr_e( 'Read More About Us', 'maju' ); ?>">
+                                    <?php esc_html_e( 'READ MORE ABOUT US', 'maju' ); ?>
+                                </button>
+                            </div>
                         </div>
-                    </div>
-                    
-                    <!-- Part 5: Button -->
-                    <div class="about-button-wrapper hidden lg:inline-flex">
-                        <button class="about-button bg-grayscale-900 text-white px-8 py-4 rounded-full text-about-button font-medium font-graphik uppercase leading-[24px] tracking-[0.02em] hover:bg-grayscale-800 transition-colors duration-300 flex items-center gap-3">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H7M17 7V17"></path>
-                            </svg>
-                            <?php esc_html_e( 'READ MORE ABOUT US', 'maju' ); ?>
-                        </button>
                     </div>
                 </div>
             </div>

@@ -17,14 +17,16 @@ document.addEventListener('DOMContentLoaded', function() {
     debugLog('DOM Content Loaded - Initializing mobile menu');
     
     const menuToggle = document.querySelector('.menu-toggle');
-    const navigation = document.querySelector('.main-navigation');
+    const desktopNavigation = document.querySelector('.main-navigation');
+    const mobileNavigation = document.querySelector('.mobile-navigation');
     const body = document.body;
     
     if (debugLog('Elements found:', {
         menuToggle: !!menuToggle,
-        navigation: !!navigation,
+        desktopNavigation: !!desktopNavigation,
+        mobileNavigation: !!mobileNavigation,
         body: !!body
-    }), menuToggle && navigation) {
+    }), menuToggle && (desktopNavigation || mobileNavigation)) {
         
         debugLog('Adding click event listener to menu toggle');
         menuToggle.addEventListener('click', function(e) {
@@ -36,7 +38,17 @@ document.addEventListener('DOMContentLoaded', function() {
             debugLog('Current expanded state:', isExpanded);
             
             this.setAttribute('aria-expanded', !isExpanded);
-            navigation.classList.toggle('mobile-menu-open');
+            
+            // Toggle desktop navigation (lg and up)
+            if (desktopNavigation) {
+                desktopNavigation.classList.toggle('mobile-menu-open');
+            }
+            
+            // Toggle mobile navigation (below lg)
+            if (mobileNavigation) {
+                mobileNavigation.classList.toggle('mobile-menu-open');
+            }
+            
             body.classList.toggle('menu-open', !isExpanded);
             
             // Handle hamburger to close icon animation
@@ -63,13 +75,23 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         
         // Close menu when clicking on navigation links
-        const menuLinks = navigation.querySelectorAll('.nav-menu-links a');
-        debugLog('Found menu links:', menuLinks.length);
-        menuLinks.forEach(link => {
+        const desktopMenuLinks = desktopNavigation ? desktopNavigation.querySelectorAll('.nav-menu-links a') : [];
+        const mobileMenuLinks = mobileNavigation ? mobileNavigation.querySelectorAll('.mobile-menu-links a') : [];
+        const allMenuLinks = [...desktopMenuLinks, ...mobileMenuLinks];
+        
+        debugLog('Found menu links:', allMenuLinks.length);
+        allMenuLinks.forEach(link => {
             link.addEventListener('click', function() {
                 debugLog('Menu link clicked, closing menu');
                 menuToggle.setAttribute('aria-expanded', 'false');
-                navigation.classList.remove('mobile-menu-open');
+                
+                if (desktopNavigation) {
+                    desktopNavigation.classList.remove('mobile-menu-open');
+                }
+                if (mobileNavigation) {
+                    mobileNavigation.classList.remove('mobile-menu-open');
+                }
+                
                 body.classList.remove('menu-open');
                 
                 // Reset to hamburger icon
@@ -87,7 +109,14 @@ document.addEventListener('DOMContentLoaded', function() {
             if (e.key === 'Escape') {
                 debugLog('Escape key pressed, closing menu');
                 menuToggle.setAttribute('aria-expanded', 'false');
-                navigation.classList.remove('mobile-menu-open');
+                
+                if (desktopNavigation) {
+                    desktopNavigation.classList.remove('mobile-menu-open');
+                }
+                if (mobileNavigation) {
+                    mobileNavigation.classList.remove('mobile-menu-open');
+                }
+                
                 body.classList.remove('menu-open');
                 
                 // Reset to hamburger icon
@@ -102,7 +131,8 @@ document.addEventListener('DOMContentLoaded', function() {
     } else {
         debugLog('ERROR: Menu elements not found!', {
             menuToggle: menuToggle,
-            navigation: navigation
+            desktopNavigation: desktopNavigation,
+            mobileNavigation: mobileNavigation
         });
     }
 });

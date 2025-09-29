@@ -56,7 +56,8 @@ if ( ! defined( 'ABSPATH' ) ) {
                 ?>
             </div>
 
-            <nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Primary Menu', 'maju' ); ?>">
+            <!-- Desktop Navigation (3-column layout) -->
+            <nav id="site-navigation" class="main-navigation hidden lg:block" role="navigation" aria-label="<?php esc_attr_e( 'Primary Menu', 'maju' ); ?>">
                 <div class="nav-menu">
                     <!-- Column 1: Image -->
                     <div class="nav-column nav-image-column justify-start">
@@ -103,6 +104,24 @@ if ( ! defined( 'ABSPATH' ) ) {
                                 <strong><?php esc_html_e( 'H:', 'maju' ); ?></strong> <?php esc_html_e( 'Mon-Fri from 8am-5pm.', 'maju' ); ?>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </nav>
+            
+            <!-- Mobile Navigation (Simple menu) -->
+            <nav id="mobile-navigation" class="mobile-navigation lg:hidden" role="navigation" aria-label="<?php esc_attr_e( 'Mobile Menu', 'maju' ); ?>">
+                <div class="mobile-nav-content">
+                    <h3 class="mobile-nav-title">MENU</h3>
+                    <div class="mobile-nav-links">
+                        <?php
+                        wp_nav_menu( array(
+                            'theme_location' => 'primary',
+                            'menu_id'        => 'mobile-menu',
+                            'menu_class'     => 'mobile-menu-links',
+                            'container'      => false,
+                            'fallback_cb'    => 'maju_fallback_menu',
+                        ) );
+                        ?>
                     </div>
                 </div>
             </nav>
