@@ -8,6 +8,14 @@ function debugLog(message, data = null) {
     console.log(`[MAJU DEBUG] ${message}`, data || '');
 }
 
+// Global scroll to top function
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
+
 // Initialize Alpine.js
 window.Alpine = Alpine;
 Alpine.start();
@@ -128,6 +136,28 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }
         });
+        
+        // Handle mobile navigation close button
+        const closeMenuBtn = document.getElementById('close-menu');
+        if (closeMenuBtn && mobileNavigation) {
+            debugLog('Mobile close button found');
+            closeMenuBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                debugLog('Mobile close button clicked');
+                
+                menuToggle.setAttribute('aria-expanded', 'false');
+                mobileNavigation.classList.remove('mobile-menu-open');
+                body.classList.remove('menu-open');
+                
+                // Reset to hamburger icon
+                const hamburgerIcon = menuToggle.querySelector('.hamburger-icon');
+                const closeIcon = menuToggle.querySelector('.close-icon');
+                if (hamburgerIcon && closeIcon) {
+                    hamburgerIcon.classList.remove('hidden');
+                    closeIcon.classList.add('hidden');
+                }
+            });
+        }
     } else {
         debugLog('ERROR: Menu elements not found!', {
             menuToggle: menuToggle,
@@ -404,36 +434,53 @@ window.addEventListener('unhandledrejection', function(e) {
 
 // Go to Top Button Functionality
 document.addEventListener('DOMContentLoaded', function() {
-    debugLog('Initializing go to top button');
+    debugLog('Initializing go to top buttons');
     
-    const goToTopBtn = document.getElementById('go-to-top');
+    const goToTopButtons = document.querySelectorAll('.arrow-btn');
     
-    if (goToTopBtn) {
-        debugLog('Go to top button found');
+    if (goToTopButtons.length > 0) {
+        debugLog(`Found ${goToTopButtons.length} go to top buttons`);
         
-        goToTopBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            debugLog('Go to top button clicked');
+        goToTopButtons.forEach((button, index) => {
+            debugLog(`Setting up go to top button ${index + 1}`);
             
-            // Smooth scroll to top
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                debugLog(`Go to top button ${index + 1} clicked`);
+                scrollToTop();
             });
         });
         
-        // Show/hide button based on scroll position
+        // Show/hide buttons based on scroll position
         window.addEventListener('scroll', function() {
-            if (window.pageYOffset > 300) {
-                goToTopBtn.style.opacity = '1';
-                goToTopBtn.style.visibility = 'visible';
-            } else {
-                goToTopBtn.style.opacity = '0.7';
-                goToTopBtn.style.visibility = 'visible';
-            }
+            const scrollTop = window.pageYOffset;
+            const shouldShow = scrollTop > 300;
+            
+            goToTopButtons.forEach((button, index) => {
+                if (shouldShow) {
+                    button.style.opacity = '1';
+                    button.style.visibility = 'visible';
+                } else {
+                    button.style.opacity = '0.7';
+                    button.style.visibility = 'visible';
+                }
+            });
         });
     } else {
-        debugLog('Go to top button not found');
+        debugLog('No go to top buttons found');
+    }
+    
+    // Also handle any buttons with data-scroll-to-top attribute
+    const scrollToTopButtons = document.querySelectorAll('[data-scroll-to-top]');
+    if (scrollToTopButtons.length > 0) {
+        debugLog(`Found ${scrollToTopButtons.length} additional scroll to top buttons`);
+        scrollToTopButtons.forEach((button, index) => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                debugLog(`Scroll to top button ${index + 1} clicked`);
+                scrollToTop();
+            });
+        });
     }
 });
 

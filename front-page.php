@@ -453,7 +453,7 @@ get_header(); ?>
                         <!-- Column 1 -->
                         <div class="flex-shrink-0 w-[220px] h-[334px] lg:w-[609px] lg:h-[424px] flex flex-col">
                             <div class="overflow-hidden rounded-lg w-full h-[75%] lg:h-full relative">
-                                <img src="https://inscub.local/wp-content/themes/maju/assets/images/post1.png" alt="Story 1" class="w-full h-full object-cover">
+                                <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/post1.png" alt="Story 1" class="w-full h-full object-cover">
                                 <!-- Gradient + text only on desktop -->
                                 <div class="hidden lg:block absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                                 <div class="hidden lg:block absolute bottom-0 left-0 right-0 p-6">
@@ -475,7 +475,7 @@ get_header(); ?>
                         <!-- Column 2 -->
                         <div class="flex-shrink-0 w-[220px] h-[334px] lg:w-[327.5px] lg:h-[424px] flex flex-col">
                             <div class="overflow-hidden rounded-lg w-full h-[75%]">
-                                <img src="https://inscub.local/wp-content/themes/maju/assets/images/post2.png" alt="Story 2" class="w-full h-full object-cover">
+                                <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/post2.png" alt="Story 2" class="w-full h-full object-cover">
                             </div>
                             <div class="mt-3">
                                 <div class="text-gray-300 text-xs font-medium tracking-wider uppercase mb-1">UI/UX</div>
@@ -488,7 +488,7 @@ get_header(); ?>
                         <!-- Column 3 -->
                         <div class="flex-shrink-0 w-[220px] h-[334px] lg:w-[327.5px] lg:h-[424px] flex flex-col">
                             <div class="overflow-hidden rounded-lg w-full h-[75%]">
-                                <img src="https://inscub.local/wp-content/themes/maju/assets/images/post3.png" alt="Story 3" class="w-full h-full object-cover">
+                                <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/post3.png" alt="Story 3" class="w-full h-full object-cover">
                             </div>
                             <div class="mt-3">
                                 <div class="text-gray-300 text-xs font-medium tracking-wider uppercase mb-1">UI/UX</div>

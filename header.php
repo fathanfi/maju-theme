@@ -108,23 +108,24 @@ if ( ! defined( 'ABSPATH' ) ) {
                 </div>
             </nav>
             
-            <!-- Mobile Navigation (Simple menu) -->
-            <nav id="mobile-navigation" class="mobile-navigation lg:hidden" role="navigation" aria-label="<?php esc_attr_e( 'Mobile Menu', 'maju' ); ?>">
-                <div class="mobile-nav-content">
+            <!-- Mobile Navigation -->
+            <nav id="mobile-navigation" class="mobile-navigation lg:hidden" role="navigation" aria-label="Mobile Menu">
+                <div class="mobile-nav-header flex justify-end items-center px-6 py-6">
+                    <button id="close-menu" class="text-white text-3xl hover:text-gray-300 transition-colors duration-300">&times;</button>
+                </div>
+
+                <div class="mobile-nav-content flex flex-col justify-center px-8 pt-16">
                     <h3 class="mobile-nav-title">MENU</h3>
-                    <div class="mobile-nav-links">
-                        <?php
-                        wp_nav_menu( array(
-                            'theme_location' => 'primary',
-                            'menu_id'        => 'mobile-menu',
-                            'menu_class'     => 'mobile-menu-links',
-                            'container'      => false,
-                            'fallback_cb'    => 'maju_fallback_menu',
-                        ) );
-                        ?>
-                    </div>
+                    <ul class="mobile-menu-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Case</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Stories</a></li>
+                    </ul>
                 </div>
             </nav>
+
 
             <div class="header-actions">
                 <button class="arrow-btn" aria-label="<?php esc_attr_e( 'Arrow Button', 'maju' ); ?>">
