@@ -39,6 +39,22 @@ document.addEventListener('DOMContentLoaded', function() {
             navigation.classList.toggle('mobile-menu-open');
             body.classList.toggle('menu-open', !isExpanded);
             
+            // Handle hamburger to close icon animation
+            const hamburgerIcon = this.querySelector('.hamburger-icon');
+            const closeIcon = this.querySelector('.close-icon');
+            
+            if (hamburgerIcon && closeIcon) {
+                if (!isExpanded) {
+                    // Opening menu - show close icon
+                    hamburgerIcon.classList.add('hidden');
+                    closeIcon.classList.remove('hidden');
+                } else {
+                    // Closing menu - show hamburger icon
+                    hamburgerIcon.classList.remove('hidden');
+                    closeIcon.classList.add('hidden');
+                }
+            }
+            
             debugLog('Menu state after toggle:', {
                 ariaExpanded: this.getAttribute('aria-expanded'),
                 hasClass: navigation.classList.contains('mobile-menu-open'),
@@ -55,6 +71,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 menuToggle.setAttribute('aria-expanded', 'false');
                 navigation.classList.remove('mobile-menu-open');
                 body.classList.remove('menu-open');
+                
+                // Reset to hamburger icon
+                const hamburgerIcon = menuToggle.querySelector('.hamburger-icon');
+                const closeIcon = menuToggle.querySelector('.close-icon');
+                if (hamburgerIcon && closeIcon) {
+                    hamburgerIcon.classList.remove('hidden');
+                    closeIcon.classList.add('hidden');
+                }
             });
         });
         
@@ -65,6 +89,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 menuToggle.setAttribute('aria-expanded', 'false');
                 navigation.classList.remove('mobile-menu-open');
                 body.classList.remove('menu-open');
+                
+                // Reset to hamburger icon
+                const hamburgerIcon = menuToggle.querySelector('.hamburger-icon');
+                const closeIcon = menuToggle.querySelector('.close-icon');
+                if (hamburgerIcon && closeIcon) {
+                    hamburgerIcon.classList.remove('hidden');
+                    closeIcon.classList.add('hidden');
+                }
             }
         });
     } else {

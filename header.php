@@ -107,9 +107,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
             <div class="header-actions">
                 <button class="arrow-btn" aria-label="<?php esc_attr_e( 'Arrow Button', 'maju' ); ?>">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
+                    <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/gototop.svg' ); ?>" 
+                         alt="Go to top" 
+                         class="gototop-icon">
                 </button>
                 
                 <button class="contact-btn" aria-label="<?php esc_attr_e( 'Contact Us', 'maju' ); ?>">
@@ -118,11 +118,10 @@ if ( ! defined( 'ABSPATH' ) ) {
                 
                 <div class="language-selector">
                     <button class="lang-toggle" aria-label="<?php esc_attr_e( 'Select Language', 'maju' ); ?>" id="lang-toggle">
-                        <span class="globe-icon" aria-hidden="true">🌐</span>
+                        <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/globe.svg' ); ?>" 
+                             alt="Language" 
+                             class="globe-icon">
                         <span class="lang-code" id="current-lang">EN</span>
-                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                        </svg>
                     </button>
                     <div class="lang-dropdown" id="lang-dropdown" style="display: none;">
                         <button class="lang-option" data-lang="en">🇺🇸 English</button>
@@ -130,13 +129,15 @@ if ( ! defined( 'ABSPATH' ) ) {
                     </div>
                 </div>
                 
-                <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+                <button class="hidden lg:inline-flex menu-toggle" aria-controls="primary-menu" aria-expanded="false">
                     <span class="sr-only"><?php esc_html_e( 'Primary Menu', 'maju' ); ?></span>
-                    <span class="hamburger-icon">
+                    <div class="hamburger-icon">
                         <span></span>
                         <span></span>
-                        <span></span>
-                    </span>
+                    </div>
+                    <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/close.svg' ); ?>" 
+                         alt="Close" 
+                         class="close-icon hidden">
                 </button>
             </div>
         </div>

@@ -48,6 +48,7 @@ module.exports = {
           950: '#082f49',
         },
         neon: {
+          basegreen: '#BBFF6A',
           green: '#00ff88',
           pink: '#ff0080',
           blue: '#0080ff',
@@ -110,21 +111,27 @@ module.exports = {
         'text-lg-regular': ['18px', { lineHeight: '26px', letterSpacing: '0.035em' }],
         // Custom sizes for footer section
         'footer-headline': ['154px', { lineHeight: '144px', letterSpacing: '-0.04em' }],
+        'footer-headline-mobile': ['54px', { lineHeight: '54px', letterSpacing: '-0.04em' }],
         'footer-button': ['16px', { lineHeight: '24px', letterSpacing: '0.02em' }],
         'footer-text': ['20px', { lineHeight: '30px', letterSpacing: '0.02em' }],
+        'footer-text-mobile': ['16px', { lineHeight: '24px', letterSpacing: '0.02em' }],
         // Custom sizes for portfolio section
         'portfolio-label': ['12px', { lineHeight: '16px', letterSpacing: '0.02em' }],
         'portfolio-headline': ['60px', { lineHeight: '68px', letterSpacing: '-0.04em' }],
+        'portfolio-headline-mobile': ['32px', { lineHeight: '40px', letterSpacing: '-0.02em' }],
         // Custom sizes for portfolio detail section
         'portfolio-detail-tag': ['18px', { lineHeight: '26px', letterSpacing: '0.035em' }],
         'portfolio-detail-client': ['24px', { lineHeight: '32px', letterSpacing: '0.02em' }],
         'portfolio-detail-title': ['60px', { lineHeight: '68px', letterSpacing: '-0.04em' }],
+        'portfolio-detail-title-mobile': ['32px', { lineHeight: '40px', letterSpacing: '-0.02em' }],
         'portfolio-detail-button': ['12px', { lineHeight: '18px', letterSpacing: '0.035em' }],
         'portfolio-detail-counter': ['18px', { lineHeight: '26px', letterSpacing: '0.035em' }],
         // Custom sizes for about section
         'about-label': ['12px', { lineHeight: '16px', letterSpacing: '0.02em' }],
         'about-title': ['60px', { lineHeight: '68px', letterSpacing: '-0.04em' }],
+        'about-title-mobile': ['32px', { lineHeight: '40px', letterSpacing: '-0.02em' }],
         'about-text': ['24px', { lineHeight: '32px', letterSpacing: '0.02em' }],
+        'about-text-mobile': ['16px', { lineHeight: '24px', letterSpacing: '0.02em' }],
         'about-button': ['16px', { lineHeight: '24px', letterSpacing: '0.02em' }],
       },
       spacing: {
