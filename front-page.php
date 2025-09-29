@@ -322,6 +322,150 @@ get_header(); ?>
         </div>
     </section>
 
+    <!-- Work With Us Section -->
+    <section class="work-with-us-section bg-black py-20">
+        <div class="container mx-auto px-4">
+            <!-- Section Header -->
+            <div class="section-header mb-16">
+                <p class="section-label text-gray-300 text-xs font-medium tracking-wider uppercase mb-4">/ why work with us</p>
+                
+                <!-- Main Title -->
+                <h2 class="main-title text-white text-6xl font-normal leading-tight tracking-tight max-w-4xl">
+                    <span class="text-white">Our work is all about taking bold, imaginative ideas and</span>
+                    <span class="text-gray-400"> turning them into real, usable results that people can interact with and benefit from</span>
+                </h2>
+            </div>
+
+            <!-- Features Grid -->
+            <div class="features-grid grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+                <!-- Feature 1 -->
+                <div class="feature-item flex gap-6">
+                    <div class="feature-number text-gray-400 text-xl font-normal leading-8 tracking-wide">01</div>
+                    <div class="feature-content">
+                        <h3 class="feature-title text-white text-xl font-medium leading-8 tracking-wide mb-3">AI-driven solutions</h3>
+                        <p class="feature-description text-gray-400 text-lg font-normal leading-7 tracking-wide">
+                            Harnessing the power of AI to create smarter, data-driven marketing and web strategies
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="feature-item flex gap-6">
+                    <div class="feature-number text-gray-400 text-xl font-normal leading-8 tracking-wide">02</div>
+                    <div class="feature-content">
+                        <h3 class="feature-title text-white text-xl font-medium leading-8 tracking-wide mb-3">Results-focused approach</h3>
+                        <p class="feature-description text-gray-400 text-lg font-normal leading-7 tracking-wide">
+                            Optimized for engagement, conversions, and long-term business growth
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="feature-item flex gap-6">
+                    <div class="feature-number text-gray-400 text-xl font-normal leading-8 tracking-wide">03</div>
+                    <div class="feature-content">
+                        <h3 class="feature-title text-white text-xl font-medium leading-8 tracking-wide mb-3">Personalized strategies</h3>
+                        <p class="feature-description text-gray-400 text-lg font-normal leading-7 tracking-wide">
+                            Tailored digital solutions that align with your brand's unique goals and audience
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="feature-item flex gap-6">
+                    <div class="feature-number text-gray-400 text-xl font-normal leading-8 tracking-wide">04</div>
+                    <div class="feature-content">
+                        <h3 class="feature-title text-white text-xl font-medium leading-8 tracking-wide mb-3">Innovative and Future-ready</h3>
+                        <p class="feature-description text-gray-400 text-lg font-normal leading-7 tracking-wide">
+                            Staying ahead of trends to keep your brand competitive in the digital landscape
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons flex items-center gap-4 justify-center">
+                <!-- Go to Top Button -->
+                <button id="goToTopBtn" class="go-to-top-btn bg-lime-green text-black px-4 py-3 rounded-lg hover:bg-lime-green-600 transition-colors duration-300">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 14l3-3 3 3m0 0l3-3 3 3M7 14l-3-3 3-3m0 0l3 3-3 3"></path>
+                    </svg>
+                </button>
+
+                <!-- Work Together Button -->
+                <button class="work-together-btn bg-lime-green text-black px-8 py-4 rounded-lg font-medium text-base tracking-wide uppercase hover:bg-lime-green-600 transition-colors duration-300">
+                    let's work together
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stories Section -->
+    <section class="stories-section bg-black py-20">
+        <div class="container mx-auto px-4">
+            <!-- Section Header -->
+            <div class="section-header mb-16">
+                <p class="section-label text-gray-300 text-xs font-medium tracking-wider uppercase mb-4">/ stories</p>
+                
+                <!-- Main Title -->
+                <h2 class="main-title text-white text-6xl font-normal leading-tight tracking-tight max-w-4xl">
+                    Thoughts, stories, and lessons from the design trenches
+                </h2>
+            </div>
+
+            <!-- Stories Grid -->
+            <div class="stories-grid grid grid-cols-1 lg:grid-cols-3 gap-2.5">
+                <!-- Large Story Card (First) -->
+                <div class="story-card story-card-large relative overflow-hidden rounded-lg">
+                    <div class="story-image">
+                        <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/post1.png' ); ?>" 
+                             alt="Story 1" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    <div class="story-overlay absolute inset-0 bg-gradient-to-t from-black64 via-transparent to-transparent"></div>
+                    <div class="story-content absolute bottom-0 left-0 right-0 p-11">
+                        <div class="story-category text-gray-300 text-xs font-medium tracking-wider uppercase mb-3">UI/UX</div>
+                        <h3 class="story-title text-white text-2xl font-normal leading-8 tracking-wide">
+                            Lorem ipsum dolor sit amet is simply dummy text for professional
+                        </h3>
+                    </div>
+                </div>
+
+                <!-- Medium Story Card (Second) -->
+                <div class="story-card story-card-medium relative overflow-hidden rounded-lg">
+                    <div class="story-image">
+                        <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/post2.png' ); ?>" 
+                             alt="Story 2" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    <div class="story-overlay absolute inset-0 bg-gradient-to-t from-black64 via-transparent to-transparent"></div>
+                    <div class="story-content absolute bottom-0 left-0 right-0 p-11">
+                        <div class="story-category text-gray-300 text-xs font-medium tracking-wider uppercase mb-3">UI/UX</div>
+                        <h3 class="story-title text-white text-2xl font-normal leading-8 tracking-wide">
+                            Lorem ipsum dolor sit amet is simply dummy text for professional
+                        </h3>
+                    </div>
+                </div>
+
+                <!-- Medium Story Card (Third) -->
+                <div class="story-card story-card-medium relative overflow-hidden rounded-lg">
+                    <div class="story-image">
+                        <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/post3.png' ); ?>" 
+                             alt="Story 3" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    <div class="story-overlay absolute inset-0 bg-gradient-to-t from-black64 via-transparent to-transparent"></div>
+                    <div class="story-content absolute bottom-0 left-0 right-0 p-11">
+                        <div class="story-category text-gray-300 text-xs font-medium tracking-wider uppercase mb-3">UI/UX</div>
+                        <h3 class="story-title text-white text-2xl font-normal leading-8 tracking-wide">
+                            Lorem ipsum dolor sit amet is simply dummy text for professional
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
 </main>
 
 <?php get_footer(); ?>

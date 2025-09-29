@@ -432,6 +432,192 @@
     }
   }
   
+  /* Work With Us section styles */
+  .work-with-us-section {
+    @apply bg-black py-20;
+  }
+  
+  .section-label {
+    @apply text-gray-300 text-xs font-medium tracking-wider uppercase;
+  }
+  
+  .main-title {
+    @apply text-white text-6xl font-normal leading-tight tracking-tight;
+  }
+  
+  .features-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 gap-8;
+  }
+  
+  .feature-item {
+    @apply flex gap-6;
+  }
+  
+  .feature-number {
+    @apply text-gray-400 text-xl font-normal leading-8 tracking-wide;
+  }
+  
+  .feature-title {
+    @apply text-white text-xl font-medium leading-8 tracking-wide;
+  }
+  
+  .feature-description {
+    @apply text-gray-400 text-lg font-normal leading-7 tracking-wide;
+  }
+  
+  .action-buttons {
+    @apply flex items-center gap-4 justify-center;
+  }
+  
+  .go-to-top-btn {
+    @apply bg-lime-green text-black px-4 py-3 rounded-lg hover:bg-lime-green transition-colors duration-300;
+  }
+  
+  .work-together-btn {
+    @apply bg-lime-green text-black px-8 py-4 rounded-lg font-medium text-base tracking-wide uppercase hover:bg-lime-green transition-colors duration-300;
+  }
+  
+  /* Responsive adjustments for Work With Us section */
+  @media (max-width: 768px) {
+    .main-title {
+      @apply text-4xl;
+    }
+    
+    .features-grid {
+      @apply grid-cols-1 gap-6;
+    }
+    
+    .feature-item {
+      @apply flex-col gap-3;
+    }
+    
+    .feature-number {
+      @apply text-lg;
+    }
+    
+    .feature-title {
+      @apply text-lg;
+    }
+    
+    .feature-description {
+      @apply text-base;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .main-title {
+      @apply text-3xl;
+    }
+    
+    .action-buttons {
+      @apply flex-col gap-3;
+    }
+    
+    .work-together-btn {
+      @apply w-full;
+    }
+  }
+  
+  /* Stories section styles */
+  .stories-section {
+    @apply bg-black py-20;
+  }
+  
+  .stories-grid {
+    @apply grid grid-cols-1 lg:grid-cols-3 gap-2.5;
+  }
+  
+  .story-card {
+    @apply relative overflow-hidden rounded-lg;
+  }
+  
+  .story-card-large {
+    @apply lg:col-span-2;
+    width: 609px;
+    height: 424px;
+  }
+  
+  .story-card-medium {
+    @apply lg:col-span-1;
+    width: 327.5px;
+    height: 336px;
+  }
+  
+  .story-image {
+    @apply w-full h-full object-cover;
+  }
+  
+  .story-overlay {
+    @apply absolute inset-0 bg-gradient-to-t from-black64 via-transparent to-transparent;
+  }
+  
+  .story-content {
+    @apply absolute bottom-0 left-0 right-0 p-11;
+  }
+  
+  .story-category {
+    @apply text-gray-300 text-xs font-medium tracking-wider uppercase;
+  }
+  
+  .story-title {
+    @apply text-white text-2xl font-normal leading-8 tracking-wide;
+  }
+  
+  /* Responsive adjustments for Stories section */
+  @media (max-width: 1024px) {
+    .stories-grid {
+      @apply grid-cols-1 gap-6;
+    }
+    
+    .story-card-large,
+    .story-card-medium {
+      @apply col-span-1 w-full;
+      height: 300px;
+    }
+    
+    .story-content {
+      @apply p-8;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .main-title {
+      @apply text-4xl;
+    }
+    
+    .story-card-large,
+    .story-card-medium {
+      height: 250px;
+    }
+    
+    .story-content {
+      @apply p-6;
+    }
+    
+    .story-title {
+      @apply text-xl;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .main-title {
+      @apply text-3xl;
+    }
+    
+    .story-card-large,
+    .story-card-medium {
+      height: 200px;
+    }
+    
+    .story-content {
+      @apply p-4;
+    }
+    
+    .story-title {
+      @apply text-lg;
+    }
+  }
+  
   /* Footer section styles */
   .footer-section {
     @apply bg-lime-green py-20 text-black;

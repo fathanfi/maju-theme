@@ -444,5 +444,93 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+// Work With Us Section Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const workTogetherBtn = document.querySelector('.work-together-btn');
+    
+    if (workTogetherBtn) {
+        debugLog('Work together button found, adding functionality...');
+        
+        workTogetherBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            debugLog('Work together button clicked');
+            
+            // Scroll to contact section or open contact form
+            const contactSection = document.querySelector('#contact') || document.querySelector('.contact-section');
+            
+            if (contactSection) {
+                debugLog('Scrolling to contact section');
+                contactSection.scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            } else {
+                // Fallback: scroll to footer or show alert
+                debugLog('Contact section not found, scrolling to footer');
+                const footer = document.querySelector('footer');
+                if (footer) {
+                    footer.scrollIntoView({ 
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                } else {
+                    alert('Contact information will be available soon!');
+                }
+            }
+        });
+    } else {
+        debugLog('Work together button not found');
+    }
+});
+
+// Stories Section Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const storyCards = document.querySelectorAll('.story-card');
+    
+    if (storyCards.length > 0) {
+        debugLog('Story cards found, adding interactivity...');
+        
+        storyCards.forEach((card, index) => {
+            // Add hover effects
+            card.addEventListener('mouseenter', function() {
+                debugLog(`Story card ${index + 1} hovered`);
+                this.style.transform = 'translateY(-4px)';
+                this.style.transition = 'transform 0.3s ease';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                debugLog(`Story card ${index + 1} hover ended`);
+                this.style.transform = 'translateY(0)';
+            });
+            
+            // Add click functionality
+            card.addEventListener('click', function() {
+                debugLog(`Story card ${index + 1} clicked`);
+                
+                // You can add navigation to individual story pages here
+                // For now, we'll just show an alert
+                const storyTitle = this.querySelector('.story-title');
+                if (storyTitle) {
+                    alert(`Opening story: ${storyTitle.textContent}`);
+                }
+            });
+            
+            // Add keyboard accessibility
+            card.setAttribute('tabindex', '0');
+            card.setAttribute('role', 'button');
+            card.setAttribute('aria-label', `Read story: ${card.querySelector('.story-title')?.textContent || 'Story'}`);
+            
+            card.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    this.click();
+                }
+            });
+        });
+    } else {
+        debugLog('No story cards found');
+    }
+});
+
 // Theme initialization complete
 debugLog('MAJU Theme JavaScript loaded successfully');

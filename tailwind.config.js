@@ -79,7 +79,8 @@ module.exports = {
         },
         green: {
           600: '#BBFF6A',
-        }
+        },
+        black64: 'rgba(0, 0, 0, 0.64)',
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
