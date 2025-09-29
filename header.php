@@ -58,10 +58,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 
             <nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Primary Menu', 'maju' ); ?>">
                 <div class="nav-menu">
-                    <!-- Navigation Column -->
-                    <div class="nav-column">
-                        <h2 class="nav-column-title">NAVIGATION</h2>
-                        <div class="nav-column-content">
+                    <!-- Column 1: Image -->
+                    <div class="nav-column nav-image-column justify-start">
+                        <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/menu-image.png' ); ?>" 
+                             alt="Menu Image" 
+                             class="nav-image">
+                    </div>
+                    
+                    <!-- Column 2: Navigation -->
+                    <div class="nav-column nav-links-column">
+                        <h3 class="nav-column-title px-[56px]">NAVIGATION</h3>
+                        <div class="nav-menu-links">
                             <?php
                             wp_nav_menu( array(
                                 'theme_location' => 'primary',
@@ -74,31 +81,26 @@ if ( ! defined( 'ABSPATH' ) ) {
                         </div>
                     </div>
                     
-                    <!-- About Column -->
-                    <div class="nav-column">
-                        <h2 class="nav-column-title">ABOUT</h2>
-                        <div class="nav-column-content">
-                            <p class="nav-about-text">
-                                Based in Bali Indonesia, Maju is a digital creative agency at the forefront of innovation, specializing in the design of digital solutions integrating artificial intelligence (AI).
-                            </p>
-                        </div>
-                    </div>
-                    
-                    <!-- Contact Column -->
-                    <div class="nav-column">
-                        <h2 class="nav-column-title">CONTACT</h2>
-                        <div class="nav-column-content">
+                    <!-- Column 3: About & Contact -->
+                    <div class="nav-column nav-info-column">
+                        <h3 class="nav-column-title">ABOUT</h3>
+                        <p class="nav-about-text">
+                            <?php esc_html_e( 'Based in Bali Indonesia, Maju is a digital creative agency at the forefront of innovation, specializing in the design of digital solutions integrating artificial intelligence (AI)', 'maju' ); ?>
+                        </p>
+                        
+                        <h3 class="nav-column-title nav-contact-title">CONTACT</h3>
+                        <div class="nav-contact-items">
                             <div class="nav-contact-item">
-                                <strong>A:</strong> Kuta, South Lombok
+                                <strong><?php esc_html_e( 'A:', 'maju' ); ?></strong> <?php esc_html_e( 'Kuta, South Lombok', 'maju' ); ?>
                             </div>
                             <div class="nav-contact-item">
-                                <strong>E:</strong> info@maju.agency
+                                <strong><?php esc_html_e( 'E:', 'maju' ); ?></strong> <?php esc_html_e( 'info@maju.agency', 'maju' ); ?>
                             </div>
                             <div class="nav-contact-item">
-                                <strong>P:</strong> +62 (0) 818 0304 2211
+                                <strong><?php esc_html_e( 'P:', 'maju' ); ?></strong> <?php esc_html_e( '+62 (0) 818 0304 2211', 'maju' ); ?>
                             </div>
                             <div class="nav-contact-item">
-                                <strong>H:</strong> Mon-Fri from 8am-5pm.
+                                <strong><?php esc_html_e( 'H:', 'maju' ); ?></strong> <?php esc_html_e( 'Mon-Fri from 8am-5pm.', 'maju' ); ?>
                             </div>
                         </div>
                     </div>
@@ -143,49 +145,5 @@ if ( ! defined( 'ABSPATH' ) ) {
         </div>
     </header>
 
-    <!-- Mobile Navigation Overlay -->
-    <nav class="main-navigation" id="primary-menu" aria-label="<?php esc_attr_e( 'Primary Menu', 'maju' ); ?>">
-        <div class="nav-menu">
-            <div class="nav-column">
-                <h3 class="nav-column-title">NAVIGATION</h3>
-                <div class="nav-column-content">
-                    <div class="nav-menu-links">
-                        <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Home', 'maju' ); ?></a>
-                        <a href="<?php echo esc_url( home_url( '/services/' ) ); ?>"><?php esc_html_e( 'Services', 'maju' ); ?></a>
-                        <a href="<?php echo esc_url( home_url( '/case/' ) ); ?>"><?php esc_html_e( 'Case', 'maju' ); ?></a>
-                        <a href="<?php echo esc_url( home_url( '/about/' ) ); ?>"><?php esc_html_e( 'About', 'maju' ); ?></a>
-                        <a href="<?php echo esc_url( home_url( '/stories/' ) ); ?>"><?php esc_html_e( 'Stories', 'maju' ); ?></a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="nav-column">
-                <h3 class="nav-column-title">ABOUT</h3>
-                <div class="nav-column-content">
-                    <p class="nav-about-text">
-                        <?php esc_html_e( 'Based in Bali Indonesia, Maju is a digital creative agency at the forefront of innovation, specializing in the design of digital solutions integrating artificial intelligence (AI)', 'maju' ); ?>
-                    </p>
-                </div>
-            </div>
-            
-            <div class="nav-column">
-                <h3 class="nav-column-title">CONTACT</h3>
-                <div class="nav-column-content">
-                    <div class="nav-contact-item">
-                        <strong><?php esc_html_e( 'A:', 'maju' ); ?></strong> <?php esc_html_e( 'Kuta, South Lombok', 'maju' ); ?>
-                    </div>
-                    <div class="nav-contact-item">
-                        <strong><?php esc_html_e( 'E:', 'maju' ); ?></strong> <?php esc_html_e( 'info@maju.agency', 'maju' ); ?>
-                    </div>
-                    <div class="nav-contact-item">
-                        <strong><?php esc_html_e( 'P:', 'maju' ); ?></strong> <?php esc_html_e( '+62 (0) 818 0304 2211', 'maju' ); ?>
-                    </div>
-                    <div class="nav-contact-item">
-                        <strong><?php esc_html_e( 'H:', 'maju' ); ?></strong> <?php esc_html_e( 'Mon-Fri from 8am-5pm.', 'maju' ); ?>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </nav>
 
     <div id="content" class="site-content">

@@ -111,23 +111,34 @@
   }
   
   .nav-menu {
-    @apply h-full flex max-w-full lg:max-w-[1440px] mx-auto px-[56px];
+    @apply h-full flex max-w-full lg:max-w-[1440px] mx-auto px-[56px] mt-[170px];
   }
   
   .nav-column {
-    @apply flex-1 flex flex-col justify-center px-8;
+    @apply flex flex-col justify-center px-8;
+  }
+  
+  /* Image Column */
+  .nav-image-column {
+    @apply flex-1 flex items-center justify-center;
+  }
+  
+  .nav-image {
+    @apply w-[277px] h-[342px] object-cover;
+  }
+  
+  /* Navigation Links Column */
+  .nav-links-column {
+    @apply flex-1 flex flex-col justify-start;
   }
   
   .nav-column-title {
-    @apply text-white text-sm font-light mb-8 tracking-wider;
-  }
-  
-  .nav-column-content {
-    @apply flex flex-col space-y-6;
-  }
-  
-  .nav-menu a {
-    @apply text-white hover:text-neon-green transition-colors duration-300 font-medium text-2xl;
+    @apply text-gray-300 text-xs font-medium tracking-wider uppercase mb-8;
+    font-family: 'Graphik', 'Inter', system-ui, sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 2%;
   }
   
   .nav-menu-links {
@@ -135,19 +146,98 @@
   }
   
   .nav-menu-links a {
-    @apply text-white hover:text-neon-green transition-colors duration-300 font-medium text-2xl;
+    @apply text-white hover:text-neon-green transition-colors duration-300;
+    font-family: 'Graphik', 'Inter', system-ui, sans-serif;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 46px;
+    letter-spacing: -2%;
+  }
+
+  .nav-menu-links .nav-menu {
+    @apply flex flex-col space-y-6 mx-0 my-0;
+  }
+  
+  /* Info Column (About & Contact) */
+  .nav-info-column {
+    @apply flex-1 flex flex-col justify-start;
   }
   
   .nav-about-text {
-    @apply text-white text-base leading-relaxed;
+    @apply text-white mb-8;
+    font-family: 'Neue Montreal', 'Inter', system-ui, sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 26px;
+    letter-spacing: 3.5%;
+  }
+  
+  .nav-contact-title {
+    @apply mb-6;
+  }
+  
+  .nav-contact-items {
+    @apply flex flex-col space-y-3;
   }
   
   .nav-contact-item {
-    @apply text-white text-base mb-3;
+    @apply text-white;
+    font-family: 'Neue Montreal', 'Inter', system-ui, sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 26px;
+    letter-spacing: 3.5%;
   }
   
   .nav-contact-item strong {
     @apply font-medium;
+  }
+  
+  /* Responsive adjustments for mobile navigation */
+  @media (max-width: 1024px) {
+    .nav-menu {
+      @apply flex-col px-8;
+    }
+    
+    .nav-column {
+      @apply px-0 mb-8;
+    }
+    
+    .nav-image-column {
+      @apply order-3;
+    }
+    
+    .nav-image {
+      @apply w-[200px] h-[250px];
+    }
+    
+    .nav-menu-links a {
+      @apply text-2xl;
+    }
+    
+    .nav-about-text,
+    .nav-contact-item {
+      @apply text-base;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .nav-menu {
+      @apply px-4;
+    }
+    
+    .nav-image {
+      @apply w-[150px] h-[180px];
+    }
+    
+    .nav-menu-links a {
+      @apply text-xl;
+    }
+    
+    .nav-about-text,
+    .nav-contact-item {
+      @apply text-sm;
+    }
   }
   
   .menu-toggle {
@@ -343,7 +433,7 @@
   }
 
   .services-section .list-items {
-    @apply py-10 px-14 gap-18 transition-all duration-300;
+    @apply py-4 lg:py-10 px-4 lg:px-14 gap-4 lg:gap-18 transition-all duration-300;
   }
   
   .services-section .list-items:hover {
@@ -354,8 +444,22 @@
     @apply text-grayscale-400;
   }
 
-  .services-section .list-items:hover .list {
+  .services-section .list-items:hover .list h3 {
     @apply text-white;
+  }
+
+  .services-section .list-items .list p {
+    @apply text-grayscale-400;
+  }
+
+  @screen lg {
+    .services-section .list-items:hover .list {
+      @apply text-white;
+    }
+
+    .services-section .list-items:hover .list p {
+      @apply text-white;
+    }
   }
   
   .service-card {

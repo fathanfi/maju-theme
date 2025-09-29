@@ -106,8 +106,10 @@ module.exports = {
         // Custom sizes for services section
         'button-label': ['12px', { lineHeight: '16px', letterSpacing: '0.02em' }],
         'desktop-h1': ['60px', { lineHeight: '68px', letterSpacing: '-0.04em' }],
+        'desktop-h1-mobile': ['32px', { lineHeight: '40px', letterSpacing: '-0.02em' }],
         'text-xl-regular': ['20px', { lineHeight: '30px', letterSpacing: '0.02em' }],
         'desktop-h4': ['30px', { lineHeight: '36px', letterSpacing: '-0.02em' }],
+        'desktop-h4-mobile': ['20px', { lineHeight: '30px', letterSpacing: '-0.02em' }],
         'text-lg-regular': ['18px', { lineHeight: '26px', letterSpacing: '0.035em' }],
         // Custom sizes for footer section
         'footer-headline': ['154px', { lineHeight: '144px', letterSpacing: '-0.04em' }],

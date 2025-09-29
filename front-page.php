@@ -40,10 +40,10 @@ get_header(); ?>
 
     
     <!-- Services Section -->
-    <section class="hidden services-section py-20 bg-grayscale-900 relative">
+    <section class="services-section py-20 bg-grayscale-900 relative">
         <!-- Gradient transition to hero section -->
         <div class="services-gradient-transition"></div>
-        <div class="container px-[56px]">
+        <div class="container px-[16px] lg:px-[56px]">
             <div class="max-w-full lg:max-w-[1328px] mx-auto">
                 <!-- Header -->
                 <div class="mb-16 max-w-full lg:max-w-[1052px]">
@@ -52,89 +52,93 @@ get_header(); ?>
                             / <?php esc_html_e( 'OUR SERVICES', 'maju' ); ?>
                         </span>
                     </div>
-                    <h2 class="text-desktop-h1 font-normal font-graphik text-white leading-[68px] tracking-[-0.04em]">
+                    <h2 class="text-desktop-h1-mobile lg:text-desktop-h1 font-normal font-graphik text-white leading-[40px] lg:leading-[68px] tracking-[-0.02em] lg:tracking-[-0.04em]">
                         <?php esc_html_e( 'We blend creativity, technology, and strategy to deliver impactful digital solutions tailored to your needs', 'maju' ); ?>
                     </h2>
                 </div>
                 
                 <!-- Services List -->
-                <div class="hidden lg:inline-flex space-y-0">
+                <div class="flex flex-col space-y-0">
+
                     <!-- Service 1 -->
-                    <div class="flex items-center border-t border-gray-600 list-items">
-                        <div class="list lg:w-[200px] flex-shrink-0">
+                    <div class="grid grid-cols-[auto_1fr] lg:flex lg:items-center border-t border-gray-600 list-items gap-y-4">
+
+                        <!-- Number -->
+                        <div class="list w-auto lg:w-[200px] flex-shrink-0">
                             <span class="text-text-xl-regular font-normal font-neue-montreal text-grayscale-400 leading-[30px] tracking-[0.02em]">
                                 (01)
                             </span>
                         </div>
-                        <div class="list lg:w-[364px] flex-shrink-0 mr-12">
-                            <h3 class="text-desktop-h4 font-normal font-graphik leading-[36px] tracking-[-0.02em]">
+                        <!-- Content -->
+                        <div class="list col-span-1 flex flex-col lg:flex-row lg:items-center lg:gap-12 lg:w-auto">
+                            <h3 class="text-desktop-h4-mobile lg:text-desktop-h4 font-normal font-graphik leading-[30px] lg:leading-[36px] tracking-[-0.02em] mb-2 lg:mb-0 lg:w-[364px]">
                                 <?php esc_html_e( 'UI/UX Design', 'maju' ); ?>
                             </h3>
-                        </div>
-                        <div class="list lg:w-[414px] flex-1">
-                            <p class="text-text-lg-regular font-normal font-neue-montreal leading-[26px] tracking-[0.035em]">
+                            <p class="text-text-lg-regular font-normal font-neue-montreal leading-[26px] tracking-[0.035em] lg:w-[414px]">
                                 <?php esc_html_e( 'Design seamless and intuitive digital experiences with user-focused interfaces that enhance interaction, improve usability, and elevate your brand\'s digital presence', 'maju' ); ?>
                             </p>
                         </div>
                     </div>
-                    
+
                     <!-- Service 2 -->
-                    <div class="flex items-center border-t border-gray-600 list-items">
-                        <div class="list lg:w-[200px] flex-shrink-0">
+                    <div class="grid grid-cols-[auto_1fr] lg:flex lg:items-center border-t border-gray-600 list-items gap-y-4">
+                        <!-- Number -->
+                        <div class="list w-auto lg:w-[200px] flex-shrink-0">
                             <span class="text-text-xl-regular font-normal font-neue-montreal leading-[30px] tracking-[0.02em]">
                                 (02)
                             </span>
                         </div>
-                        <div class="list lg:w-[364px] flex-shrink-0 mr-12">
-                            <h3 class="text-desktop-h4 font-normal font-graphik leading-[36px] tracking-[-0.02em]">
+                        <!-- Content -->
+                        <div class="list col-span-1 flex flex-col lg:flex-row lg:items-center lg:gap-12 lg:w-auto">
+                            <h3 class="text-desktop-h4-mobile lg:text-desktop-h4 font-normal font-graphik leading-[30px] lg:leading-[36px] tracking-[-0.02em] mb-2 lg:mb-0 lg:w-[364px]">
                                 <?php esc_html_e( 'Brand Identity', 'maju' ); ?>
                             </h3>
-                        </div>
-                        <div class="list lg:w-[414px] flex-1">
-                            <p class="text-text-lg-regular font-normal font-neue-montreal leading-[26px] tracking-[0.035em]">
+                            <p class="text-text-lg-regular font-normal font-neue-montreal leading-[26px] tracking-[0.035em] lg:w-[414px]">
                                 <?php esc_html_e( 'Craft a strong brand identity with our expertise in creating visuals and strategic elements that resonate with your audience and boost your market presence.', 'maju' ); ?>
                             </p>
                         </div>
                     </div>
-                    
+
                     <!-- Service 3 -->
-                    <div class="flex items-center border-t border-gray-600 list-items">
-                        <div class="list lg:w-[200px] flex-shrink-0">
+                    <div class="grid grid-cols-[auto_1fr] lg:flex lg:items-center border-t border-gray-600 list-items gap-y-4">
+                        <!-- Number -->
+                        <div class="list w-auto lg:w-[200px] flex-shrink-0">
                             <span class="text-text-xl-regular font-normal font-neue-montreal leading-[30px] tracking-[0.02em]">
                                 (03)
                             </span>
                         </div>
-                        <div class="list lg:w-[364px] flex-shrink-0 mr-12">
-                            <h3 class="text-desktop-h4 font-normal font-graphik leading-[36px] tracking-[-0.02em]">
+                        <!-- Content -->
+                        <div class="list col-span-1 flex flex-col lg:flex-row lg:items-center lg:gap-12 lg:w-auto">
+                            <h3 class="text-desktop-h4-mobile lg:text-desktop-h4 font-normal font-graphik leading-[30px] lg:leading-[36px] tracking-[-0.02em] mb-2 lg:mb-0 lg:w-[364px]">
                                 <?php esc_html_e( 'Web Development', 'maju' ); ?>
                             </h3>
-                        </div>
-                        <div class="list lg:w-[414px] flex-1">
-                            <p class="text-text-lg-regular font-normal font-neue-montreal leading-[26px] tracking-[0.035em]">
+                            <p class="text-text-lg-regular font-normal font-neue-montreal leading-[26px] tracking-[0.035em] lg:w-[414px]">
                                 <?php esc_html_e( 'Develop fast, responsive, and reliable websites with clean structures and optimized features that support your business objectives and create lasting impressions', 'maju' ); ?>
                             </p>
                         </div>
                     </div>
-                    
+
                     <!-- Service 4 -->
-                    <div class="flex items-center border-t border-gray-600 list-items">
-                        <div class="list lg:w-[200px] flex-shrink-0">
+                    <div class="grid grid-cols-[auto_1fr] lg:flex lg:items-center border-t border-gray-600 list-items gap-y-4">
+                        <!-- Number -->
+                        <div class="list w-auto lg:w-[200px] flex-shrink-0">
                             <span class="text-text-xl-regular font-normal font-neue-montreal leading-[30px] tracking-[0.02em]">
                                 (04)
                             </span>
                         </div>
-                        <div class="list lg:w-[364px] flex-shrink-0 mr-12">
-                            <h3 class="text-desktop-h4 font-normal font-graphik leading-[36px] tracking-[-0.02em]">
+                        <!-- Content -->
+                        <div class="list col-span-1 flex flex-col lg:flex-row lg:items-center lg:gap-12 lg:w-auto">
+                            <h3 class="text-desktop-h4-mobile lg:text-desktop-h4 font-normal font-graphik leading-[30px] lg:leading-[36px] tracking-[-0.02em] mb-2 lg:mb-0 lg:w-[364px]">
                                 <?php esc_html_e( 'Social Media Design', 'maju' ); ?>
                             </h3>
-                        </div>
-                        <div class="list lg:w-[414px] flex-1">
-                            <p class="text-text-lg-regular font-normal font-neue-montreal leading-[26px] tracking-[0.035em]">
+                            <p class="text-text-lg-regular font-normal font-neue-montreal leading-[26px] tracking-[0.035em] lg:w-[414px]">
                                 <?php esc_html_e( 'Create eye-catching social media visuals with consistent branding and engaging layouts that boost audience interest, interaction, and online visibility', 'maju' ); ?>
                             </p>
                         </div>
                     </div>
+
                 </div>
+
             </div>
         </div>
     </section>
